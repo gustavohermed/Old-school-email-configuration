@@ -1,0 +1,9 @@
+zone "gustavo.local" {
+    type master;
+    file "/etc/bind/db.gustavo.local";
+};
+
+zone "57.168.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/db.192.168.57";
+};

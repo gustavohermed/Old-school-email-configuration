@@ -1,0 +1,20 @@
+$TTL 604800
+@   IN  SOA dns.gustavo.local. root.gustavo.local. (
+        2 ; Serial
+        604800     ; Refresh
+        86400      ; Retry
+        2419200    ; Expire
+        604800 )   ; Negative Cache TTL
+
+;
+@       IN  NS  dns.gustavo.local.
+@       IN  MX  10 mail.gustavo.local.
+
+;
+dns     IN  A   192.168.57.10
+mail    IN  A   192.168.57.20
+
+;
+smtp    IN  CNAME mail
+imap    IN  CNAME mail
+pop     IN  CNAME mail

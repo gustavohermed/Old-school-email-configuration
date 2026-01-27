@@ -1,0 +1,37 @@
+- name: Provisionar servidor DNS con BIND9
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Instalar BIND9
+      apt:
+        name:
+          - bind9
+          - bind9utils
+        state: present
+        update_cache: yes
+
+    - name: Copiar named.conf.local
+      copy:
+        src: templates/named.conf.local
+        dest: /etc/bind/named.conf.local
+
+    - name: Copiar zona directa
+      copy:
+        src: templates/db.gustavo.local
+        dest: /etc/bind/db.gustavo.local
+
+    - name: Copiar zona inversa
+      copy:
+        src: templates/db.192.168.57
+        dest: /etc/bind/db.192.168.57
+
+    - name: Comprobar configuración
+      command: named-checkconf
+
+    - name: Reiniciar BIND
+      service:
+        name: named
+        state: restarted
+        enabled: yes
+
