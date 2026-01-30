@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   # DNS
   # ======================
   config.vm.define "dns" do |dns|
-    dns.vm.hostname = "dns.gustavo.local"
+    dns.vm.hostname = "dns.gustavo.test"
     dns.vm.network "private_network", ip: "192.168.57.10"
   
     dns.vm.provision "ansible_local" do |ansible|
@@ -18,8 +18,8 @@ Vagrant.configure("2") do |config|
   # ======================
   # MAIL (Postfix + Dovecot)
   # ======================
-  config.vm.define "postdove" do |mail|
-    mail.vm.hostname = "mail.gustavo.local"
+  config.vm.define "mail" do |mail|
+    mail.vm.hostname = "mail.gustavo.test"
     mail.vm.network "private_network", ip: "192.168.57.20"
   end
 

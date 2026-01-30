@@ -1,6 +1,6 @@
-zone "gustavo.local" {
+zone "gustavo.test" {
     type master;
-    file "/etc/bind/db.gustavo.local";
+    file "/etc/bind/db.gustavo.test";
 };
 
 zone "57.168.192.in-addr.arpa" {

@@ -18,8 +18,8 @@
 
     - name: Copiar zona directa
       copy:
-        src: templates/db.gustavo.local
-        dest: /etc/bind/db.gustavo.local
+        src: templates/db.gustavo.test
+        dest: /etc/bind/db.gustavo.test
 
     - name: Copiar zona inversa
       copy:

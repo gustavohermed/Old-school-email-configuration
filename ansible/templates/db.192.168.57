@@ -1,12 +1,11 @@
 $TTL 604800
-@   IN  SOA dns.gustavo.local. root.gustavo.local. (
-        2026012301
+@   IN  SOA dns.gustavo.test. root.gustavo.test. (
+        1
         604800
         86400
         2419200
         604800 )
 ;
-@       IN  NS  dns.gustavo.local.
-
-10      IN  PTR dns.gustavo.local.
-20      IN  PTR mail.gustavo.local.
+@       IN  NS  dns.gustavo.test.
+10      IN  PTR dns.gustavo.test.
+20      IN  PTR mail.gustavo.test.
