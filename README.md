@@ -65,9 +65,11 @@ Se ajustó la configuración de disable_plaintext_auth a = yes.
 ### `/etc/dovecot/conf.d/10-ssl.conf`
 Se configuró el uso de TLS en Dovecot indicando la ruta del certificado y la clave autofirmados generados para el servidor de correo.
 
-ssl = yes
-ssl_cert = </etc/ssl/certs/mail-cert.pem
-ssl_key = </etc/ssl/private/mail.key
+ssl = yes.
+
+ssl_cert = </etc/ssl/certs/mail-cert.pem .
+
+ssl_key = </etc/ssl/private/mail.key .
 
 ### Certificados TLS
 Se generaron certificados autofirmados mediante OpenSSL para asegurar las conexiones IMAP y SMTP, aceptándose posteriormente las excepciones de seguridad en Thunderbird.
