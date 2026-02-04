@@ -43,10 +43,13 @@ Los usuarios de correo se han creado como **usuarios locales del sistema** en el
 Los usuarios han sido: Manolo y Laura, y he hecho una comprobación de que manolo le envía un correo a Laura, y Laura lo recibe, las capturas estan en el documento capturas.pdf
 
 sudo useradd -m  manolo
+
 sudo passwd manolo
 
 sudo doveadm mailbox create -u manolo INBOX
+
 ls /home/manolo/Maildir
+
 sudo doveadm user manolo
 
 
@@ -60,6 +63,7 @@ A continuación se detallan los principales ficheros modificados en la máquina
 ### Instalacion postfix y dovecot
 
 sudo apt update
+
 sudo apt install postfix mailutils
 
 sudo apt install dovecot-core dovecot-imapd dovecot-pop3d
@@ -78,7 +82,9 @@ home_mailbox = Maildir/
 mynetworks = 127.0.0.0/8, 192.168.57.0/24, 10.112.0.0/16
 
 smtpd_use_tls=yes
+
 smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+
 smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
 
 
@@ -99,7 +105,9 @@ disable_plaintext_auth = yes
 Se configuró el uso de TLS en Dovecot indicando la ruta del certificado y la clave autofirmados generados para el servidor de correo.
 
 ssl = yes
+
 ssl_cert = </etc/ssl/certs/mail-cert.pem
+
 ssl_key = </etc/ssl/private/mail.key
 
 ### Certificados TLS
